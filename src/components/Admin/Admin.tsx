@@ -4,11 +4,6 @@ import { withRouter } from 'react-router';
 
 import './Admin.scss';
 
-import Send from '../../components/Panels/Send/Send'
-import Document from '../../components/Panels/Document/Document'
-import View from '../../components/Panels/View/View'
-import Fines from '../../components/Panels/Fines/Fines'
-
 import { store } from '../../stores/Store';
 
 interface IAdminProps{}
@@ -25,10 +20,7 @@ interface IAdminProps{}
                     
                     </article>
                     <article className="dashboard">
-                        <Send/>
-                        <Fines/>
-                        <Document/>
-                        <View/>
+                        
                     </article>
                 </section>
             </article>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './Register.scss';
+import './FormRegister.scss';
 import { observer } from 'mobx-react';
 import { store } from '../../stores/Store';
 import { withRouter } from 'react-router';
@@ -7,26 +7,19 @@ import { withRouter } from 'react-router';
 interface formRegisterProps {
 
 }
-const Register = observer(withRouter((formRegisterProps) => {
+const FormRegister = observer(withRouter((formRegisterProps) => {
     return (
 
         <article>
             <h1>Register Form</h1>
             <form onSubmit={() => {
-                store.register() &&
-                event.preventDefault()
                 formRegisterProps.history.push("/login");
-                alert("User "+store.email+" has been succesfully registered");
             }
             }>
                 <span>E-Mail</span>
-                <input className="mail" type="email" placeholder="example@gmail.com" onChange={(e) =>
-                    store.handleChangeEmail((document.querySelector('.mail') as HTMLInputElement).value)
-                } />
+                <input className="mail" type="email" placeholder="example@gmail.com"/>
                 <span>Password</span>
-                <input className="pass" type="password" placeholder="••••••••" onChange={() =>
-                    store.handleChangePassword((document.querySelector('.pass') as HTMLInputElement).value)
-                } />
+                <input className="pass" type="password" placeholder="••••••••"/>
                 <span>Confirm Password</span>
                 <input id="pass" type="password" placeholder="••••••••" />
 
@@ -42,4 +35,4 @@ const Register = observer(withRouter((formRegisterProps) => {
     )
 }));
 
-export default Register;
+export default FormRegister;
